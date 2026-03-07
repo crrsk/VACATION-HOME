@@ -1,16 +1,42 @@
-# React + Vite
+# 🏡 Vacation Home Booking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web moderna y ligera para la gestión de reservas de una casa vacacional. Este proyecto utiliza **React** para una interfaz dinámica y **Supabase** como backend en la nube para el manejo de datos en tiempo real.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 📋 Tabla de Contenidos
+- [Características](#-características)
+- [Tecnologías](#-tecnologías)
+- [Requisitos Previos](#-requisitos-previos)
+- [Instalación y Configuración](#-instalación-y-configuración)
+- [Estructura de la Base de Datos](#-estructura-de-la-base-de-datos)
+- [Despliegue](#-despliegue)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## ✨ Características
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Calendario de Disponibilidad:** Consulta de fechas libres sincronizada con la base de datos.
+* **Formulario de Reserva:** Registro de datos del huésped (nombre, fechas, contacto).
+* **Actualizaciones en Tiempo Real:** Si alguien reserva, los cambios se reflejan instantáneamente gracias a los WebSockets de Supabase.
+* **Diseño Responsive:** Optimizado para móviles, tablets y escritorio.
+
+## 🛠️ Tecnologías
+
+* **Frontend:** [React.js](https://reactjs.org/) (Hooks, Context API).
+* **Estilos:** CSS3 nativo (Custom Properties y Grid/Flexbox).
+* **Backend & DB:** [Supabase](https://supabase.com/) (PostgreSQL + Realtime).
+* **Cliente de API:** `@supabase/supabase-js`.
+
+## ⚙️ Requisitos Previos
+
+Antes de empezar, asegúrate de tener instalado:
+* [Node.js](https://nodejs.org/) (v14 o superior).
+* Una cuenta activa en [Supabase](https://app.supabase.com/).
+
+## 🚀 Instalación y Configuración
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/nombre-del-repo.git](https://github.com/tu-usuario/nombre-del-repo.git)
+   cd nombre-del-repo
