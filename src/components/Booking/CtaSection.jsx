@@ -1,13 +1,15 @@
+import { ReserveButton } from '../ui/ReserveButton'
+
 export function CtaSection() {
   return (
     <section id="reserva" className="cta-section" aria-labelledby="cta-title">
-      <p className="section-kicker">Próximo paso</p>
-      <h2 id="cta-title">Lanza tu próxima landing de reservas en minutos</h2>
+      <p className="section-kicker">Reserva tu estancia</p>
+      <h2 id="cta-title">Entra ahora para reservar la casa en tus fechas</h2>
       <p>
-        Empezamos con una base limpia y escalable. Desde aquí podemos conectar búsqueda,
-        catálogo dinámico y flujo de pago.
+        Consulta disponibilidad en tiempo real, confirma el precio final y completa
+        tu reserva en pocos pasos con atencion personalizada.
       </p>
-      <button className="button-primary" type="button">Comenzar ahora</button>
+      <ReserveButton />
     </section>
   )
 }

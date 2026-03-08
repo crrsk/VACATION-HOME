@@ -1,18 +1,44 @@
+import { NavLink, Link } from 'react-router-dom'
+import { useState } from 'react'
+
 export function LandingHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const closeMenu = () => setIsMenuOpen(false)
+
   return (
     <header className="landing-header">
-      <a className="brand" href="#inicio" aria-label="Vacation Home inicio">
+      <Link className="brand" to="/" aria-label="Vacation Home inicio" onClick={closeMenu}>
         <span className="brand-mark" aria-hidden="true">VH</span>
         <span>Vacation Home</span>
-      </a>
+      </Link>
 
-      <nav className="header-nav" aria-label="Navegación principal">
-        <a href="#experiencia">Experiencia</a>
-        <a href="#destinos">Destinos</a>
-        <a href="#reserva">Reserva</a>
-      </nav>
+      <div className="header-actions">
+        <Link className="header-button" to="/reserva">Ver disponibilidad</Link>
 
-      <button className="header-button" type="button">Ver disponibilidad</button>
+        <div className="menu-wrapper">
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label="Abrir menu de navegacion"
+            aria-expanded={isMenuOpen}
+            aria-controls="header-menu"
+            onClick={() => setIsMenuOpen((prevValue) => !prevValue)}
+          >
+            <span className="menu-line" aria-hidden="true" />
+            <span className="menu-line" aria-hidden="true" />
+            <span className="menu-line" aria-hidden="true" />
+          </button>
+
+          {isMenuOpen ? (
+            <nav id="header-menu" className="header-menu" aria-label="Navegacion principal">
+              <NavLink to="/" onClick={closeMenu}>Inicio</NavLink>
+              <NavLink to="/destinos" onClick={closeMenu}>Destinos</NavLink>
+              <NavLink to="/reserva" onClick={closeMenu}>Reserva</NavLink>
+            </nav>
+          ) : null}
+        </div>
+      </div>
     </header>
   )
 }

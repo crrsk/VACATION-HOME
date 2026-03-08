@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const galleryImages = [
   '/images/house-1.png',
@@ -10,6 +10,16 @@ const galleryImages = [
 
 export function GallerySection() {
   const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    const autoplayId = window.setInterval(() => {
+      setActiveIndex((current) =>
+        current === galleryImages.length - 1 ? 0 : current + 1,
+      )
+    }, 5500)
+
+    return () => window.clearInterval(autoplayId)
+  }, [])
 
   const prevSlide = () => {
     setActiveIndex((current) =>
@@ -40,12 +50,20 @@ export function GallerySection() {
           &#8249;
         </button>
 
-        <img
-          className="carousel-main-image"
-          src={galleryImages[activeIndex]}
-          alt={`Casa destacada ${activeIndex + 1}`}
-          loading="lazy"
-        />
+        <div
+          className="carousel-track"
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        >
+          {galleryImages.map((image, index) => (
+            <img
+              key={image}
+              className="carousel-main-image"
+              src={image}
+              alt={`Casa destacada ${index + 1}`}
+              loading="lazy"
+            />
+          ))}
+        </div>
 
         <button
           className="carousel-control carousel-control-right"

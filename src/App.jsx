@@ -1,21 +1,24 @@
 import './index.css'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import { LandingHeader } from './components/Layout/LandingHeader'
-import { HeroSection } from './components/Hero/HeroSection'
-import { GallerySection } from './components/Gallery/GallerySection'
-import { HighlightsSection } from './components/Amenities/HighlightsSection'
-import { CtaSection } from './components/Booking/CtaSection'
+import { LandingFooter } from './components/Layout/LandingFooter'
+import { HomePage } from './pages/HomePage'
+import { DestinationsPage } from './pages/DestinationsPage'
+import { ReservePage } from './pages/ReservePage'
 
 function App() {
   return (
     <div className="page-shell">
       <LandingHeader />
       <main>
-        <HeroSection />
-        <GallerySection />
-        <HighlightsSection />
-        <CtaSection />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/destinos" element={<DestinationsPage />} />
+          <Route path="/reserva" element={<ReservePage />} />
+        </Routes>
       </main>
+      <LandingFooter />
     </div>
   )
 }
