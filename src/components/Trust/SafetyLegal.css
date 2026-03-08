@@ -1,98 +1,108 @@
 .safety-legal-section {
-    border: 1px solid #d9dee6;
-    border-radius: 20px;
-    padding: clamp(1.2rem, 1rem + 1vw, 1.8rem);
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(6px);
+  border: 1px solid #d8dee7;
+  border-radius: 20px;
+  padding: clamp(1.4rem, 1.15rem + 1vw, 2.1rem);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 1.25rem;
 }
 
 .safety-legal-section h2 {
-    margin: 0;
-    line-height: 1.1;
-    color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+  color: #0f172a;
 }
 
 .safety-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 1.1rem;
-    margin-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+  margin: 0;
 }
 
 .safety-block {
-    padding: 1.05rem;
-    border-radius: 14px;
-    border: 1px solid #e4e8ef;
-    background: rgba(250, 251, 252, 0.72);
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid #e5eaf1;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
 }
 
 .safety-block h3 {
-    font-size: 1.125rem;
-    margin-bottom: 0.85rem;
-    color: #111827;
+  font-size: 1.06rem;
+  margin: 0 0 0.7rem;
+  color: #111827;
 }
 
 .safety-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
 }
 
 .safety-list li {
-    font-size: 0.95rem;
-    color: #4b5563;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.55;
 }
 
 .cancel-text {
-    font-size: 0.95rem;
-    color: #4b5563;
-    line-height: 1.6;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.faq-container {
+  padding: 1rem;
+  border: 1px solid #e5eaf1;
+  border-radius: 14px;
+  background: #ffffff;
 }
 
 .faq-container h3 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #1e293b;
+  font-size: 1.22rem;
+  margin: 0 0 1rem;
+  color: #1e293b;
 }
 
 .faq-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
 .faq-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  background: #f8fafc;
 }
 
 .faq-item strong {
-    font-size: 1rem;
-    color: #1e293b;
+  font-size: 0.95rem;
+  color: #1e293b;
+  line-height: 1.4;
 }
 
 .faq-item p {
-    font-size: 0.9rem;
-    color: #4b5563;
-    line-height: 1.5;
-    margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.55;
+  margin: 0;
 }
 
 @media (max-width: 880px) {
-    .safety-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+  .safety-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
 }
