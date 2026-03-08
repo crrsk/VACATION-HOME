@@ -1,0 +1,29 @@
+.cta-section {
+  border: 1px solid #d9dee6;
+  border-radius: 20px;
+  padding: clamp(1.2rem, 1rem + 1vw, 1.8rem);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(6px);
+  display: grid;
+  gap: 0.95rem;
+  justify-items: start;
+}
+
+.section-kicker {
+  margin: 0 0 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.76rem;
+  color: #6b7280;
+}
+
+.cta-section h2 {
+  margin: 0;
+  line-height: 1.1;
+  color: #0f172a;
+}
+
+.cta-section p {
+  margin: 0;
+  color: #4b5563;
+}

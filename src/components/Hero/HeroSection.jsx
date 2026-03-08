@@ -1,32 +1,34 @@
+import './HeroSection.css'
+import { Link } from 'react-router-dom'
 import { ReserveButton } from '../ui/ReserveButton'
 
 export function HeroSection() {
   return (
     <section id="inicio" className="hero-section" aria-labelledby="hero-title">
-      <p className="section-kicker">Escapadas privadas de alto nivel</p>
-      <h1 id="hero-title">Tu hogar vacacional premium, listo para reservar hoy</h1>
+      <p className="section-kicker">Villa completa en Cartagena (Murcia)</p>
+      <h1 id="hero-title">Reserva directa para 6 huespedes con piscina privada</h1>
       <p className="hero-copy">
-        Villas y apartamentos seleccionados para viajeros que valoran diseno, comodidad
-        y experiencias memorables en cada detalle.
+        Alojamiento entero con 3 dormitorios, 3 camas y 2 banos. Gestion directa con el anfitrion,
+        sin comisiones de terceros y con informacion transparente antes del pago.
       </p>
 
       <div className="hero-actions">
-        <ReserveButton />
-        <button className="button-secondary" type="button">Hablar con asesor</button>
+        <ReserveButton label="Iniciar reserva segura" to="/reserva" />
+        <Link className="button-secondary" to="/destinos">Ver fotos de la casa</Link>
       </div>
 
-      <div className="hero-metrics" aria-label="Metricas de confianza">
+      <div className="hero-metrics" aria-label="Datos del alojamiento">
         <article>
-          <strong>4.9/5</strong>
-          <span>Valoracion promedio</span>
+          <strong>6</strong>
+          <span>Huespedes maximos</span>
         </article>
         <article>
-          <strong>120+</strong>
-          <span>Propiedades verificadas</span>
+          <strong>3 / 2</strong>
+          <span>Dormitorios y banos</span>
         </article>
         <article>
-          <strong>24/7</strong>
-          <span>Soporte personalizado</span>
+          <strong>Directo</strong>
+          <span>Sin comision de plataforma</span>
         </article>
       </div>
     </section>

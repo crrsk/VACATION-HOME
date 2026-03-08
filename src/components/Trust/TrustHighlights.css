@@ -1,0 +1,56 @@
+.trust-highlights-section {
+  border: 1px solid #d9dee6;
+  border-radius: 20px;
+  padding: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.trust-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.25rem 0 0;
+  margin: 0;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.badge-icon {
+  width: 40px;
+  height: 40px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #0ea5e9;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-title {
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: #1e293b;
+}
+
+.badge-subtitle {
+  font-size: 0.92rem;
+  color: #64748b;
+}
+
+@media (max-width: 640px) {
+  .trust-highlights {
+    gap: 1.2rem;
+  }
+}

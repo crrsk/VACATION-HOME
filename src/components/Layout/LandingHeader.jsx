@@ -1,5 +1,6 @@
 import { NavLink, Link } from 'react-router-dom'
 import { useState } from 'react'
+import './LandingHeader.css'
 
 export function LandingHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,9 +15,15 @@ export function LandingHeader() {
       </Link>
 
       <div className="header-actions">
-        <Link className="header-button" to="/reserva">Ver disponibilidad</Link>
-
         <div className="menu-wrapper">
+          {isMenuOpen ? (
+            <nav id="header-menu" className="header-menu" aria-label="Navegacion principal">
+              <NavLink to="/" onClick={closeMenu}>Inicio</NavLink>
+              <NavLink to="/destinos" onClick={closeMenu}>Destinos</NavLink>
+              <NavLink to="/reserva" onClick={closeMenu}>Reserva</NavLink>
+            </nav>
+          ) : null}
+
           <button
             className="menu-toggle"
             type="button"
@@ -29,14 +36,6 @@ export function LandingHeader() {
             <span className="menu-line" aria-hidden="true" />
             <span className="menu-line" aria-hidden="true" />
           </button>
-
-          {isMenuOpen ? (
-            <nav id="header-menu" className="header-menu" aria-label="Navegacion principal">
-              <NavLink to="/" onClick={closeMenu}>Inicio</NavLink>
-              <NavLink to="/destinos" onClick={closeMenu}>Destinos</NavLink>
-              <NavLink to="/reserva" onClick={closeMenu}>Reserva</NavLink>
-            </nav>
-          ) : null}
         </div>
       </div>
     </header>

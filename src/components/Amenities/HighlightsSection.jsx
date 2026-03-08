@@ -1,15 +1,17 @@
+import './HighlightsSection.css'
+
 const highlights = [
   {
-    title: 'Selección curada',
-    description: 'Cada propiedad cumple un estándar de diseño, ubicación y confort.',
+    title: 'Alojamiento entero',
+    description: 'Villa completa en Cartagena para disfrutar privacidad durante toda la estancia.',
   },
   {
-    title: 'Check-in fluido',
-    description: 'Proceso digital con instrucciones claras para llegar sin fricciones.',
+    title: 'Piscina y exterior',
+    description: 'Zona de piscina con tumbonas y espacios abiertos para relajarse al aire libre.',
   },
   {
-    title: 'Experiencias locales',
-    description: 'Recomendaciones exclusivas para vivir cada destino como residente.',
+    title: 'Capacidad para grupos',
+    description: 'Distribucion para hasta 6 huespedes con 3 dormitorios, 3 camas y 2 banos.',
   },
 ]
 
@@ -17,8 +19,8 @@ export function HighlightsSection() {
   return (
     <section id="experiencia" className="highlights-section" aria-labelledby="highlights-title">
       <div className="section-header">
-        <p className="section-kicker">Por qué elegirnos</p>
-        <h2 id="highlights-title">Componentes clave de una estancia impecable</h2>
+        <p className="section-kicker">Resumen del alojamiento</p>
+        <h2 id="highlights-title">Lo mas importante de esta villa en Cartagena</h2>
       </div>
 
       <div className="highlights-grid">
