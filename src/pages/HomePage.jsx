@@ -12,10 +12,10 @@ export function HomePage() {
   return (
     <>
       <HeroSection />
+      <TrustHighlights />
       <GallerySection />
 
       <div className="section-container">
-        <TrustHighlights />
         <HighlightsSection />
         <ReviewSection />
         <HostProfile />

@@ -51,8 +51,12 @@ export function GallerySection() {
   return (
     <section id="destinos" className="gallery-section" aria-labelledby="gallery-title">
       <div className="section-header">
-        <p className="section-kicker">Galeria real</p>
-        <h2 id="gallery-title">Villa en Cartagena con piscina y vistas abiertas</h2>
+        <p className="section-kicker">Galeria privada</p>
+        <h2 id="gallery-title">Piscina, calma y luz mediterranea</h2>
+        <p>
+          Recorre los espacios clave de la villa antes de solicitar fechas: exterior con vistas,
+          zonas de descanso y estancias pensadas para desconectar en grupo.
+        </p>
       </div>
 
       <div className="gallery-carousel">
@@ -92,6 +96,12 @@ export function GallerySection() {
         >
           <span className="carousel-control-icon" aria-hidden="true">&#8250;</span>
         </button>
+      </div>
+
+      <div className="gallery-caption">
+        <span>Exterior privado</span>
+        <span>Vistas abiertas</span>
+        <span>Capacidad 6 huespedes</span>
       </div>
 
       <div className="gallery-thumbnails" aria-label="Seleccion de imagen">

@@ -1,72 +1,55 @@
 .booking-steps-section {
-  border: 1px solid #d8dee7;
-  border-radius: 20px;
-  padding: clamp(1.4rem, 1.15rem + 1vw, 2.1rem);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
   display: grid;
-  gap: 1.3rem;
-}
-
-.booking-steps-section .section-header {
-  margin: 0;
-}
-
-.booking-steps-section .section-kicker {
-  text-transform: uppercase;
-  font-size: 0.79rem;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  color: #64748b;
-  margin: 0 0 0.55rem;
-}
-
-.booking-steps-section h2 {
-  font-size: clamp(1.45rem, 1.2rem + 0.9vw, 1.95rem);
-  color: #0f172a;
-  margin: 0;
-  line-height: 1.2;
+  gap: 1.35rem;
 }
 
 .steps-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  counter-reset: booking-step;
 }
 
 .step-item {
   display: flex;
   flex-direction: column;
-  gap: 0.95rem;
-  padding: 1rem;
-  border: 1px solid #e4e9f1;
-  border-radius: 14px;
-  background: #ffffff;
+  gap: 1.2rem;
+  min-height: 16.5rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #d9d2c7;
+  background: #fffdfa;
 }
 
 .step-number-pill {
-  width: 2.3rem;
-  height: 2.3rem;
-  background: #1e293b;
+  width: 2.55rem;
+  height: 2.55rem;
+  background: #1d2528;
   color: #ffffff;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.93rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.step-content {
+  margin-top: auto;
 }
 
 .step-content h3 {
-  font-size: 1.06rem;
-  margin: 0 0 0.45rem;
-  color: #111827;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.55rem;
+  color: #1d2528;
 }
 
 .step-content p {
   font-size: 0.96rem;
-  color: #475569;
-  line-height: 1.62;
+  color: #5c6667;
+  line-height: 1.68;
   margin: 0;
 }
 
@@ -76,12 +59,6 @@
   }
 
   .step-item {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0.85rem;
-  }
-
-  .step-number-pill {
-    flex-shrink: 0;
+    min-height: 0;
   }
 }

@@ -5,13 +5,13 @@ export function HostProfile() {
     <section id="anfitrion" className="host-profile-section" aria-labelledby="host-title">
       <div className="section-header">
         <p className="section-kicker">Tu anfitrion</p>
-        <h2 id="host-title">Conoce a Enrique</h2>
+        <h2 id="host-title">Atencion directa, sin intermediarios</h2>
       </div>
 
       <div className="host-card">
         <div className="host-image-container">
           <img
-            src="images/huesped.png"
+            src="/images/huesped.png"
             alt="Anfitrion"
             className="host-avatar"
           />
@@ -19,13 +19,13 @@ export function HostProfile() {
         </div>
         <div className="host-info">
           <h2 className="host-name">Enrique</h2>
-          <p className="host-meta">Anfitrion con 3 anos de experiencia</p>
+          <p className="host-meta">Anfitrion local con 3 anos de experiencia</p>
         </div>
       </div>
 
       <div className="host-details-grid">
         <div className="host-detail-item">
-          <span className="detail-icon">4.98</span>
+          <span className="detail-icon">5.0</span>
           <div className="detail-text">
             <strong>24 resenas verificadas</strong>
           </div>

@@ -1,33 +1,36 @@
 import './TrustHighlights.css'
 
+const trustItems = [
+  {
+    icon: '0%',
+    title: 'Reserva directa',
+    subtitle: 'Sin comisiones de intermediacion',
+  },
+  {
+    icon: 'ID',
+    title: 'Anfitrion verificado',
+    subtitle: 'Trato personal antes y durante la estancia',
+  },
+  {
+    icon: 'SSL',
+    title: 'Pago trazable',
+    subtitle: 'Condiciones revisables antes de confirmar',
+  },
+]
+
 export function TrustHighlights() {
   return (
-    <section className="trust-highlights-section">
-      <div className="section-header">
-        <p className="section-kicker">Garantias de reserva</p>
-      </div>
+    <section className="trust-highlights-section" aria-label="Garantias de reserva">
       <div className="trust-highlights">
-        <div className="trust-badge">
-          <span className="badge-icon">?</span>
-          <div className="badge-text">
-            <span className="badge-title">Reserva Directa</span>
-            <span className="badge-subtitle">Sin comisiones</span>
+        {trustItems.map((item) => (
+          <div className="trust-badge" key={item.title}>
+            <span className="badge-icon">{item.icon}</span>
+            <div className="badge-text">
+              <span className="badge-title">{item.title}</span>
+              <span className="badge-subtitle">{item.subtitle}</span>
+            </div>
           </div>
-        </div>
-        <div className="trust-badge">
-          <span className="badge-icon">?</span>
-          <div className="badge-text">
-            <span className="badge-title">Anfitrion Verificado</span>
-            <span className="badge-subtitle">Identidad confirmada</span>
-          </div>
-        </div>
-        <div className="trust-badge">
-          <span className="badge-icon">??</span>
-          <div className="badge-text">
-            <span className="badge-title">Pago Seguro</span>
-            <span className="badge-subtitle">Proteccion SSL</span>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   )
