@@ -17,8 +17,17 @@ main {
   gap: 2.4rem;
 }
 
+.hero-section,
+.gallery-section,
+.cta-section,
+.section-container > section {
+  scroll-margin-top: 6.3rem;
+}
+
 .section-header {
   max-width: 740px;
+  position: relative;
+  padding-top: 0.2rem;
 }
 
 .section-header p:not(.section-kicker) {
@@ -37,13 +46,25 @@ main {
   color: #8a643b;
 }
 
-section h2 {
+.section-header h2,
+.cta-section h2 {
+  position: relative;
   margin: 0;
   color: #1d2528;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 2rem;
+  font-size: clamp(2.15rem, 1.45rem + 2vw, 3rem);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.04;
+}
+
+.section-header h2::after,
+.cta-section h2::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 2px;
+  margin-top: 0.85rem;
+  background: #b98b57;
 }
 
 @media (max-width: 760px) {
@@ -52,7 +73,8 @@ section h2 {
     margin-top: 4.8rem;
   }
 
-  section h2 {
-    font-size: 1.6rem;
+  .section-header h2,
+  .cta-section h2 {
+    font-size: 1.9rem;
   }
 }

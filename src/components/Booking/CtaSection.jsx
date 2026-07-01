@@ -12,7 +12,7 @@ export function CtaSection() {
           Sin comisiones de intermediacion y con contacto directo durante todo el proceso.
         </p>
       </div>
-      <ReserveButton label="Solicitar disponibilidad" to="/reserva" />
+      <ReserveButton label="Escribir para reservar" href="mailto:reservas@villacartagena.com" />
     </section>
   )
 }

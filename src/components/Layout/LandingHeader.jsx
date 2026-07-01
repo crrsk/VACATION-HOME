@@ -1,11 +1,12 @@
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import './LandingHeader.css'
 
 const navLinks = [
-  { to: '/', label: 'La villa' },
-  { to: '/destinos', label: 'Galeria' },
-  { to: '/reserva', label: 'Reservar' },
+  { href: '/#inicio', label: 'La villa' },
+  { href: '/#destinos', label: 'Galeria' },
+  { href: '/#experiencia', label: 'Experiencia' },
+  { href: '/#anfitrion', label: 'Anfitrion' },
 ]
 
 export function LandingHeader() {
@@ -16,7 +17,6 @@ export function LandingHeader() {
   return (
     <header className="landing-header">
       <Link className="brand" to="/" aria-label="Villa Mirador inicio" onClick={closeMenu}>
-        <span className="brand-mark" aria-hidden="true">VM</span>
         <span className="brand-copy">
           <span className="brand-name">Villa Mirador</span>
           <span className="brand-place">Cartagena, Murcia</span>
@@ -26,24 +26,25 @@ export function LandingHeader() {
       <div className="header-actions">
         <nav className="desktop-menu" aria-label="Navegacion principal">
           {navLinks.map((link) => (
-            <NavLink key={link.to} to={link.to}>
+            <a key={link.href} href={link.href}>
               {link.label}
-            </NavLink>
+            </a>
           ))}
         </nav>
 
-        <NavLink className="header-reserve-link" to="/reserva">
+        <a className="header-reserve-link" href="/#reserva">
           Disponibilidad
-        </NavLink>
+        </a>
 
         <div className="menu-wrapper">
           {isMenuOpen ? (
             <nav id="header-menu" className="header-menu" aria-label="Navegacion principal">
               {navLinks.map((link) => (
-                <NavLink key={link.to} to={link.to} onClick={closeMenu}>
+                <a key={link.href} href={link.href} onClick={closeMenu}>
                   {link.label}
-                </NavLink>
+                </a>
               ))}
+              <a href="/#reserva" onClick={closeMenu}>Disponibilidad</a>
             </nav>
           ) : null}
 

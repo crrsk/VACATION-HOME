@@ -1,5 +1,4 @@
 import './HeroSection.css'
-import { Link } from 'react-router-dom'
 import { ReserveButton } from '../ui/ReserveButton'
 
 export function HeroSection() {
@@ -14,8 +13,8 @@ export function HeroSection() {
         </p>
 
         <div className="hero-actions">
-          <ReserveButton label="Consultar disponibilidad" to="/reserva" />
-          <Link className="button-secondary" to="/destinos">Ver galeria</Link>
+          <ReserveButton label="Consultar disponibilidad" href="/#reserva" />
+          <a className="button-secondary" href="/#destinos">Ver galeria</a>
         </div>
       </div>
 

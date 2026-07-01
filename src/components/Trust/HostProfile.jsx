@@ -15,9 +15,9 @@ export function HostProfile() {
             alt="Anfitrion"
             className="host-avatar"
           />
-          <div className="host-badge-icon">OK</div>
         </div>
         <div className="host-info">
+          <span className="host-verified-label">Identidad verificada</span>
           <h2 className="host-name">Enrique</h2>
           <p className="host-meta">Anfitrion local con 3 anos de experiencia</p>
         </div>
