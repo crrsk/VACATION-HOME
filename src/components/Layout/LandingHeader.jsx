@@ -1,39 +1,45 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { siteConfig } from '../../config'
+import { LangSwitcher } from './LangSwitcher'
 import './LandingHeader.css'
-
-const navLinks = [
-  { href: '/#inicio', label: 'La villa' },
-  { href: '/#destinos', label: 'Galeria' },
-  { href: '/#experiencia', label: 'Experiencia' },
-  { href: '/#anfitrion', label: 'Anfitrion' },
-]
 
 export function LandingHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t, i18n } = useTranslation()
 
   const closeMenu = () => setIsMenuOpen(false)
 
+  const navLinks = [
+    { href: '/#inicio', label: t('nav.villa') },
+    { href: '/#destinos', label: t('nav.gallery') },
+    { href: '/#experiencia', label: t('nav.experience') },
+    { href: '/#anfitrion', label: t('nav.host') },
+  ]
+
   return (
     <header className="landing-header">
-      <Link className="brand" to="/" aria-label="Villa Mirador inicio" onClick={closeMenu}>
+      <Link className="brand" to="/" aria-label={`${siteConfig.propertyName} inicio`} onClick={closeMenu}>
         <span className="brand-copy">
-          <span className="brand-name">Villa Mirador</span>
-          <span className="brand-place">Cartagena, Murcia</span>
+          <span className="brand-name">{siteConfig.propertyName}</span>
+          <span className="brand-place">{siteConfig.location}</span>
         </span>
       </Link>
 
+      <nav className="desktop-menu" aria-label="Navegacion principal">
+        {navLinks.map((link) => (
+          <a key={link.href} href={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
       <div className="header-actions">
-        <nav className="desktop-menu" aria-label="Navegacion principal">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <LangSwitcher />
 
         <a className="header-reserve-link" href="/#reserva">
-          Disponibilidad
+          {t('nav.availability')}
         </a>
 
         <div className="menu-wrapper">
@@ -44,7 +50,7 @@ export function LandingHeader() {
                   {link.label}
                 </a>
               ))}
-              <a href="/#reserva" onClick={closeMenu}>Disponibilidad</a>
+              <a href="/#reserva" onClick={closeMenu}>{t('nav.availability')}</a>
             </nav>
           ) : null}
 
@@ -65,3 +71,4 @@ export function LandingHeader() {
     </header>
   )
 }
+

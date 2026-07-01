@@ -1,21 +1,25 @@
 .landing-header {
   position: fixed;
-  top: 0.9rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1120px, 92vw);
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
   z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 4rem;
-  padding: 0.65rem 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.52);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
+  min-height: 4.5rem;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  padding-left: max(4vw, calc((100% - 1120px) / 2));
+  padding-right: max(4vw, calc((100% - 1120px) / 2));
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(18px);
-  box-shadow: 0 18px 46px rgba(29, 37, 40, 0.12);
+  box-shadow: 0 4px 24px rgba(29, 37, 40, 0.04);
 }
 
 .brand {
@@ -55,6 +59,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .desktop-menu a,
@@ -141,9 +148,10 @@
 
 @media (max-width: 760px) {
   .landing-header {
-    top: 0.55rem;
+    top: 0;
     min-height: 3.75rem;
-    padding: 0.55rem 0.65rem;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
   }
 
   .desktop-menu,
@@ -155,3 +163,4 @@
     display: inline-flex;
   }
 }
+

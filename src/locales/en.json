@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "villa": "The Villa",
+    "gallery": "Gallery",
+    "experience": "Experience",
+    "host": "Host",
+    "availability": "Availability"
+  },
+  "hero": {
+    "kicker": "Private villa in Cartagena",
+    "title": "Villa Los Palmitos of Cartagena",
+    "description": "A complete vacation home for 6 guests, with a private pool, open views, and direct booking with the host.",
+    "reserve": "Check availability",
+    "view_gallery": "View gallery"
+  },
+  "metrics": {
+    "guests": "Guests",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "commission": "Platform commission"
+  },
+  "host": {
+    "title": "Direct attention, no middlemen",
+    "kicker": "Your host",
+    "verified": "Verified identity",
+    "experience": "Local host with 3 years of experience",
+    "reviews": "24 verified reviews",
+    "response_time_title": "Fast response",
+    "response_time": "Usually responds within an hour",
+    "description": "Enrique personally manages this villa in Cartagena and maintains direct contact with every guest. Before confirming, he shares all stay information, rules, and conditions so you can book with total clarity.",
+    "contact": "Contact Enrique"
+  }
+}

@@ -33,16 +33,16 @@ main {
 .section-header p:not(.section-kicker) {
   margin: 1rem 0 0;
   color: #5c6667;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.75;
 }
 
 .section-kicker {
   margin: 0 0 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0;
-  font-size: 0.75rem;
-  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 700;
   color: #8a643b;
 }
 
@@ -61,10 +61,16 @@ main {
 .cta-section h2::after {
   content: '';
   display: block;
-  width: 4rem;
+  width: 0;
   height: 2px;
   margin-top: 0.85rem;
   background: #b98b57;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-header h2.is-visible::after,
+.cta-section h2.is-visible::after {
+  width: min(100%, 100%);
 }
 
 @media (max-width: 760px) {

@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "villa": "La villa",
+    "gallery": "Galería",
+    "experience": "Experiencia",
+    "host": "Anfitrión",
+    "availability": "Disponibilidad"
+  },
+  "hero": {
+    "kicker": "Villa privada en Cartagena",
+    "title": "Villa Los Palmitos de Cartagena",
+    "description": "Una casa vacacional completa para 6 huéspedes, con piscina privada, vistas abiertas y reserva directa con el anfitrión.",
+    "reserve": "Consultar disponibilidad",
+    "view_gallery": "Ver galería"
+  },
+  "metrics": {
+    "guests": "Huéspedes",
+    "bedrooms": "Dormitorios",
+    "bathrooms": "Baños",
+    "commission": "Comisión de plataforma"
+  },
+  "host": {
+    "title": "Atención directa, sin intermediarios",
+    "kicker": "Tu anfitrión",
+    "verified": "Identidad verificada",
+    "experience": "Anfitrión local con 3 años de experiencia",
+    "reviews": "24 reseñas verificadas",
+    "response_time_title": "Respuesta rápida",
+    "response_time": "Suele responder en menos de una hora",
+    "description": "Enrique gestiona personalmente esta villa en Cartagena y mantiene contacto directo con cada huésped. Antes de confirmar, comparte toda la información de la estancia, normas y condiciones para que reserves con total claridad.",
+    "contact": "Contactar con Enrique"
+  }
+}

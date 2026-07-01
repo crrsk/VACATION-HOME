@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "villa": "Die Villa",
+    "gallery": "Galerie",
+    "experience": "Erfahrung",
+    "host": "Gastgeber",
+    "availability": "Verfügbarkeit"
+  },
+  "hero": {
+    "kicker": "Private Villa in Cartagena",
+    "title": "Villa Los Palmitos in Cartagena",
+    "description": "Ein komplettes Ferienhaus für 6 Gäste, mit privatem Pool, weitem Blick und direkter Buchung beim Gastgeber.",
+    "reserve": "Verfügbarkeit prüfen",
+    "view_gallery": "Galerie ansehen"
+  },
+  "metrics": {
+    "guests": "Gäste",
+    "bedrooms": "Schlafzimmer",
+    "bathrooms": "Badezimmer",
+    "commission": "Plattformprovision"
+  },
+  "host": {
+    "title": "Direkte Betreuung, keine Vermittler",
+    "kicker": "Ihr Gastgeber",
+    "verified": "Verifizierte Identität",
+    "experience": "Lokaler Gastgeber mit 3 Jahren Erfahrung",
+    "reviews": "24 verifizierte Bewertungen",
+    "response_time_title": "Schnelle Antwort",
+    "response_time": "Antwortet normalerweise innerhalb einer Stunde",
+    "description": "Enrique verwaltet diese Villa in Cartagena persönlich und pflegt den direkten Kontakt zu jedem Gast. Vor der Bestätigung teilt er alle Informationen zum Aufenthalt, Regeln und Bedingungen mit, damit Sie mit voller Klarheit buchen können.",
+    "contact": "Enrique kontaktieren"
+  }
+}

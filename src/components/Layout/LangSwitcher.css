@@ -1,0 +1,77 @@
+.custom-lang-switcher {
+  position: relative;
+  display: inline-flex;
+  margin: 0 0.5rem;
+}
+
+.lang-switcher-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #ded8ce;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #435052;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-switcher-trigger:hover {
+  border-color: #b98b57;
+}
+
+.lang-flag {
+  width: 18px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+
+.lang-chevron {
+  font-size: 0.5rem;
+  color: #8c9394;
+  margin-left: 0.2rem;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 0.3rem);
+  right: 0;
+  margin: 0;
+  padding: 0.3rem;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #ded8ce;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  z-index: 50;
+  min-width: 120px;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: #435052;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.lang-option:hover,
+.lang-option.active {
+  background: #edf6f3;
+  color: #0c5b51;
+}

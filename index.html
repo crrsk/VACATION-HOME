@@ -1,10 +1,64 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Villa Mirador Cartagena</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- SEO Básico -->
+    <title>Villa Los Palmitos Cartagena | Alquiler Vacacional</title>
+    <meta name="description" content="Una casa vacacional completa para 6 huéspedes, con piscina privada, vistas abiertas y reserva directa con el anfitrión en Cartagena, Murcia." />
+    <meta name="keywords" content="Villa Los Palmitos, Alquiler vacacional Cartagena, Casa vacacional Murcia, Villa con piscina privada, Alojamiento Cartagena" />
+    <meta name="author" content="Enrique" />
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.lospalmitoscartagena.com/" />
+    <meta property="og:title" content="Villa Los Palmitos Cartagena | Alquiler Vacacional" />
+    <meta property="og:description" content="Una casa vacacional completa para 6 huéspedes, con piscina privada, vistas abiertas y reserva directa con el anfitrión." />
+    <meta property="og:image" content="https://www.lospalmitoscartagena.com/images/listing-4.jpg" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.lospalmitoscartagena.com/" />
+    <meta name="twitter:title" content="Villa Los Palmitos Cartagena | Alquiler Vacacional" />
+    <meta name="twitter:description" content="Casa vacacional en Cartagena para 6 personas con piscina privada." />
+    <meta name="twitter:image" content="https://www.lospalmitoscartagena.com/images/listing-4.jpg" />
+
+    <!-- Datos Estructurados JSON-LD para Google e IA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VacationRental",
+      "name": "Villa Los Palmitos",
+      "description": "Una casa vacacional completa para 6 huéspedes, con piscina privada, vistas abiertas y reserva directa con el anfitrión.",
+      "image": "https://www.lospalmitoscartagena.com/images/listing-4.jpg",
+      "url": "https://www.lospalmitoscartagena.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cartagena",
+        "addressRegion": "Murcia",
+        "addressCountry": "ES"
+      },
+      "numberOfRooms": 3,
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "value": 6
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Piscina privada",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Reserva directa sin intermediarios",
+          "value": true
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

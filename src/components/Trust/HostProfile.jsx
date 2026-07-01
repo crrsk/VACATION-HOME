@@ -1,3 +1,4 @@
+import { siteConfig } from '../../config'
 import './HostProfile.css'
 
 export function HostProfile() {
@@ -12,14 +13,14 @@ export function HostProfile() {
         <div className="host-image-container">
           <img
             src="/images/huesped.png"
-            alt="Anfitrion"
+            alt={`Anfitrion ${siteConfig.host.name}`}
             className="host-avatar"
           />
         </div>
         <div className="host-info">
           <span className="host-verified-label">Identidad verificada</span>
-          <h2 className="host-name">Enrique</h2>
-          <p className="host-meta">Anfitrion local con 3 anos de experiencia</p>
+          <h2 className="host-name">{siteConfig.host.name}</h2>
+          <p className="host-meta">{siteConfig.host.experience}</p>
         </div>
       </div>
 
@@ -27,7 +28,7 @@ export function HostProfile() {
         <div className="host-detail-item">
           <span className="detail-icon">5.0</span>
           <div className="detail-text">
-            <strong>24 resenas verificadas</strong>
+            <strong>{siteConfig.host.reviews}</strong>
           </div>
         </div>
         <div className="host-detail-item">
@@ -40,17 +41,14 @@ export function HostProfile() {
           <span className="detail-icon">1h</span>
           <div className="detail-text">
             <strong>Respuesta rapida</strong>
-            <span>Suele responder en menos de una hora</span>
+            <span>{siteConfig.host.responseTime}</span>
           </div>
         </div>
       </div>
 
       <div className="host-description">
-        <p>
-          Enrique gestiona personalmente esta villa en Cartagena y mantiene contacto directo con cada huesped.
-          Antes de confirmar, comparte toda la informacion de la estancia, normas y condiciones para que reserves con total claridad.
-        </p>
-        <button className="contact-host-btn">Contactar con Enrique</button>
+        <p>{siteConfig.host.description}</p>
+        <button className="contact-host-btn">Contactar con {siteConfig.host.name}</button>
       </div>
     </section>
   )
