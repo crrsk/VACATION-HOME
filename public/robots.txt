@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.villalospalmitos.com/sitemap.xml
+Sitemap: https://villalospalmitos.vercel.app/sitemap.xml
