@@ -6,6 +6,7 @@ create table public.profiles (
   full_name text,
   email text,
   phone text,
+  role text default 'user',
   created_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 
@@ -46,3 +47,29 @@ create table public.bookings (
 alter table public.bookings enable row level security;
 create policy "Usuarios pueden ver sus propias reservas." on bookings for select using (auth.uid() = user_id);
 create policy "Usuarios pueden crear sus reservas." on bookings for insert with check (auth.uid() = user_id);
+
+-- 3. Tabla de Reseñas
+create table public.reviews (
+  id uuid default uuid_generate_v4() primary key,
+  user_id uuid references public.profiles(id) not null,
+  alias text not null,
+  rating integer not null check (rating >= 1 and rating <= 5),
+  comment text not null,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- Habilitar RLS para Reseñas
+alter table public.reviews enable row level security;
+
+-- Cualquiera puede ver las reseñas
+create policy "Cualquiera puede ver reseñas." on reviews for select using (true);
+
+-- Solo usuarios con reserva pueden crear una reseña
+create policy "Usuarios con reserva pueden crear reseñas." on reviews for insert 
+with check (
+  auth.uid() = user_id and
+  exists (
+    select 1 from public.bookings 
+    where user_id = auth.uid()
+  )
+);

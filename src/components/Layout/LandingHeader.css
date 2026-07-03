@@ -146,6 +146,31 @@
   gap: 0.15rem;
 }
 
+.header-auth-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid #d6d1c8;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1d2528;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-auth-btn:hover {
+  background: #edf6f3;
+  color: #0c5b51;
+  border-color: #0c5b51;
+}
+
+.auth-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
 @media (max-width: 760px) {
   .landing-header {
     top: 0;
