@@ -1,9 +1,35 @@
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { siteConfig } from '../../config'
+import { supabase } from '../../lib/supabaseClient'
 import './HostProfile.css'
 
 export function HostProfile() {
   const { t } = useTranslation()
+  const [averageRating, setAverageRating] = useState('-')
+  const [reviewCount, setReviewCount] = useState(0)
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('reviews')
+          .select('rating')
+        
+        if (error) throw error
+        
+        if (data && data.length > 0) {
+          const avg = data.reduce((acc, curr) => acc + curr.rating, 0) / data.length
+          setAverageRating(avg.toFixed(1))
+          setReviewCount(data.length)
+        }
+      } catch (error) {
+        console.error('Error al obtener reseñas para perfil de anfitrión:', error.message)
+      }
+    }
+    
+    fetchReviews()
+  }, [])
 
   return (
     <section id="anfitrion" className="host-profile-section" aria-labelledby="host-title">
@@ -29,9 +55,9 @@ export function HostProfile() {
 
       <div className="host-details-grid">
         <div className="host-detail-item">
-          <span className="detail-icon">5.0</span>
+          <span className="detail-icon">{averageRating}</span>
           <div className="detail-text">
-            <strong>{t('host.reviews')}</strong>
+            <strong>{reviewCount === 1 ? '1 reseña' : `${reviewCount} reseñas`}</strong>
           </div>
         </div>
         <div className="host-detail-item">
@@ -56,3 +82,4 @@ export function HostProfile() {
     </section>
   )
 }
+

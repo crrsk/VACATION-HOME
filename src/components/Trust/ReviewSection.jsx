@@ -80,7 +80,7 @@ export function ReviewSection() {
   // Calculamos la nota media
   const averageRating = reviews.length > 0 
     ? (reviews.reduce((acc, curr) => acc + curr.rating, 0) / reviews.length).toFixed(1)
-    : '5.0'
+    : '0.0'
 
   return (
     <section id="resenas" className="review-section" aria-labelledby="review-title">
@@ -88,7 +88,7 @@ export function ReviewSection() {
         <p className="section-kicker">{t('reviews.kicker')}</p>
         <h2 id="review-title">Experiencias reales</h2>
         <div className="overall-rating">
-          <span className="rating-score">{averageRating}</span>
+          <span className="rating-score">{reviews.length > 0 ? averageRating : '-'}</span>
           <span className="rating-count">
             {reviews.length} {reviews.length === 1 ? 'reseña verificada' : 'reseñas verificadas'}
           </span>
