@@ -1,18 +1,18 @@
+import { useTranslation } from 'react-i18next'
 import './CtaSection.css'
 import { ReserveButton } from '../ui/ReserveButton'
 
 export function CtaSection() {
+  const { t } = useTranslation()
+
   return (
     <section id="reserva" className="cta-section" aria-labelledby="cta-title">
       <div>
-        <p className="section-kicker">Reserva directa</p>
-        <h2 id="cta-title">Tu estancia privada en Cartagena empieza con una consulta clara.</h2>
-        <p>
-          Te enviaremos disponibilidad, condiciones y contrato antes del pago.
-          Sin comisiones de intermediacion y con contacto directo durante todo el proceso.
-        </p>
+        <p className="section-kicker">{t('cta.kicker')}</p>
+        <h2 id="cta-title">{t('cta.title')}</h2>
+        <p>{t('cta.description')}</p>
       </div>
-      <ReserveButton label="Escribir para reservar" href="mailto:reservas@villacartagena.com" />
+      <ReserveButton label={t('cta.button')} to="/checkout" />
     </section>
   )
 }

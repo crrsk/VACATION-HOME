@@ -29,5 +29,136 @@
     "response_time": "Suele responder en menos de una hora",
     "description": "Enrique gestiona personalmente esta villa en Cartagena y mantiene contacto directo con cada huésped. Antes de confirmar, comparte toda la información de la estancia, normas y condiciones para que reserves con total claridad.",
     "contact": "Contactar con Enrique"
+  },
+  "trust_highlights": {
+    "direct_booking": "Reserva directa",
+    "direct_booking_sub": "Sin comisiones de intermediación",
+    "verified_host": "Anfitrión verificado",
+    "verified_host_sub": "Trato personal antes y durante la estancia",
+    "traceable_payment": "Pago trazable",
+    "traceable_payment_sub": "Condiciones revisables antes de confirmar"
+  },
+  "gallery": {
+    "kicker": "Galería privada",
+    "title": "Piscina, calma y luz mediterránea",
+    "description": "Recorre los espacios clave de la villa antes de solicitar fechas: exterior con vistas, zonas de descanso y estancias pensadas para desconectar en grupo.",
+    "caption_1": "Exterior privado",
+    "caption_2": "Vistas abiertas",
+    "caption_3": "Capacidad 6 huéspedes",
+    "prev": "Imagen anterior",
+    "next": "Imagen siguiente",
+    "view_image": "Ver imagen",
+    "photo_alt": "Foto del alojamiento"
+  },
+  "highlights": {
+    "kicker": "La experiencia",
+    "title": "Una estancia privada con sensación de hotel boutique",
+    "items": {
+      "privacy": {
+        "eyebrow": "Privacidad",
+        "title": "Villa completa solo para tu grupo",
+        "description": "Sin zonas compartidas: piscina, exterior y estancias quedan reservadas para tus acompañantes."
+      },
+      "exterior": {
+        "eyebrow": "Exterior",
+        "title": "Piscina con vistas abiertas",
+        "description": "Un espacio protagonista para desayunos lentos, tardes de sol y noches tranquilas al aire libre."
+      },
+      "comfort": {
+        "eyebrow": "Confort",
+        "title": "Distribución cómoda para 6",
+        "description": "3 dormitorios, 3 camas y 2 baños para que cada estancia funcione con amplitud."
+      }
+    }
+  },
+  "reviews": {
+    "kicker": "Experiencias reales",
+    "title": "Lo que recuerdan los huéspedes",
+    "verified_count": "24 reseñas verificadas",
+    "show_more": "Mostrar las 24 reseñas",
+    "items": {
+      "1": {
+        "author": "Marta y familia",
+        "text": "Casa impecable, zona exterior espectacular y gestión muy transparente desde el primer mensaje.",
+        "rating": "Excelente",
+        "date": "Junio 2025"
+      },
+      "2": {
+        "author": "Carlos, viaje en grupo",
+        "text": "Proceso de reserva claro, contrato bien explicado y check-in sin sorpresas. Muy profesional.",
+        "rating": "Excelente",
+        "date": "Agosto 2025"
+      },
+      "3": {
+        "author": "Ana y Diego",
+        "text": "Nos dio mucha confianza recibir toda la información por adelantado y contacto directo en todo momento.",
+        "rating": "Excelente",
+        "date": "Septiembre 2025"
+      }
+    }
+  },
+  "booking_steps": {
+    "kicker": "Transparencia total",
+    "title": "Cómo funciona la reserva",
+    "items": {
+      "1": {
+        "title": "Solicitud de fechas",
+        "description": "Nos envías tus fechas y número de huéspedes. Respondemos con confirmación de disponibilidad en menos de 24 horas."
+      },
+      "2": {
+        "title": "Validación y contrato",
+        "description": "Recibes resumen de estancia, política de cancelación y contrato de alquiler temporal para revisar antes del pago."
+      },
+      "3": {
+        "title": "Pago protegido y acceso",
+        "description": "El pago se realiza por pasarela segura con justificante automático. Tras el pago confirmamos check-in y datos de llegada."
+      }
+    }
+  },
+  "safety_legal": {
+    "kicker": "Tu tranquilidad es lo primero",
+    "title": "Seguridad y normas",
+    "house_rules": "Normas de la casa",
+    "rules": {
+      "arrival": "Llegada: 15:00 - 20:00",
+      "departure": "Salida: 11:00",
+      "max_guests": "Máximo 6 huéspedes",
+      "no_parties": "No se permiten fiestas ni eventos"
+    },
+    "security": "Seguridad y entorno",
+    "security_items": {
+      "smoke_detector": "Detector de humo instalado",
+      "first_aid": "Botiquín de primeros auxilios",
+      "medical": "Cerca de servicios médicos",
+      "neighborhood": "Entorno residencial vigilado"
+    },
+    "cancellation": "Cancelación",
+    "cancellation_text": "Cancelación gratuita hasta 14 días antes de la llegada. Consulta los detalles en el contrato de reserva.",
+    "faq": "Preguntas frecuentes",
+    "faqs": {
+      "1": {
+        "question": "¿Cómo se realiza el pago de forma segura?",
+        "answer": "Trabajamos con transferencia bancaria verificada o pasarela con confirmación. Nunca solicitamos pagos por canales no trazables."
+      },
+      "2": {
+        "question": "¿Qué documentación recibo antes de pagar?",
+        "answer": "Recibirás datos completos de la reserva, condiciones, política de cancelación y contrato de alquiler temporal."
+      },
+      "3": {
+        "question": "¿Cómo puedo evitar intentos de fraude?",
+        "answer": "Confirma siempre que hablas por nuestros canales oficiales y revisa que la cuenta de cobro coincida con la indicada en el contrato."
+      }
+    }
+  },
+  "cta": {
+    "kicker": "Reserva directa",
+    "title": "Tu estancia privada en Cartagena empieza con una consulta clara.",
+    "description": "Te enviaremos disponibilidad, condiciones y contrato antes del pago. Sin comisiones de intermediación y con contacto directo durante todo el proceso.",
+    "button": "Escribir para reservar"
+  },
+  "footer": {
+    "rights": "Villa en Cartagena. Reserva directa.",
+    "links": "Enlaces útiles",
+    "location": "Ubicación en Cartagena"
   }
 }

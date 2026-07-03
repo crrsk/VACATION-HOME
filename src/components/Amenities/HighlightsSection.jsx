@@ -1,29 +1,32 @@
+import { useTranslation } from 'react-i18next'
 import './HighlightsSection.css'
 
-const highlights = [
-  {
-    eyebrow: 'Privacidad',
-    title: 'Villa completa solo para tu grupo',
-    description: 'Sin zonas compartidas: piscina, exterior y estancias quedan reservadas para tus acompanantes.',
-  },
-  {
-    eyebrow: 'Exterior',
-    title: 'Piscina con vistas abiertas',
-    description: 'Un espacio protagonista para desayunos lentos, tardes de sol y noches tranquilas al aire libre.',
-  },
-  {
-    eyebrow: 'Confort',
-    title: 'Distribucion comoda para 6',
-    description: '3 dormitorios, 3 camas y 2 banos para que cada estancia funcione con amplitud.',
-  },
-]
-
 export function HighlightsSection() {
+  const { t } = useTranslation()
+
+  const highlights = [
+    {
+      eyebrow: t('highlights.items.privacy.eyebrow'),
+      title: t('highlights.items.privacy.title'),
+      description: t('highlights.items.privacy.description'),
+    },
+    {
+      eyebrow: t('highlights.items.exterior.eyebrow'),
+      title: t('highlights.items.exterior.title'),
+      description: t('highlights.items.exterior.description'),
+    },
+    {
+      eyebrow: t('highlights.items.comfort.eyebrow'),
+      title: t('highlights.items.comfort.title'),
+      description: t('highlights.items.comfort.description'),
+    },
+  ]
+
   return (
     <section id="experiencia" className="highlights-section" aria-labelledby="highlights-title">
       <div className="section-header">
-        <p className="section-kicker">La experiencia</p>
-        <h2 id="highlights-title">Una estancia privada con sensacion de hotel boutique</h2>
+        <p className="section-kicker">{t('highlights.kicker')}</p>
+        <h2 id="highlights-title">{t('highlights.title')}</h2>
       </div>
 
       <div className="highlights-grid">

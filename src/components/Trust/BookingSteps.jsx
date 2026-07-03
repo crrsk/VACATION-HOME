@@ -1,29 +1,32 @@
+import { useTranslation } from 'react-i18next'
 import './BookingSteps.css'
 
-const steps = [
-  {
-    number: '1',
-    title: 'Solicitud de fechas',
-    description: 'Nos envias tus fechas y numero de huespedes. Respondemos con confirmacion de disponibilidad en menos de 24 horas.',
-  },
-  {
-    number: '2',
-    title: 'Validacion y contrato',
-    description: 'Recibes resumen de estancia, politica de cancelacion y contrato de alquiler temporal para revisar antes del pago.',
-  },
-  {
-    number: '3',
-    title: 'Pago protegido y acceso',
-    description: 'El pago se realiza por pasarela segura con justificante automatico. Tras el pago confirmamos check-in y datos de llegada.',
-  },
-]
-
 export function BookingSteps() {
+  const { t } = useTranslation()
+
+  const steps = [
+    {
+      number: '1',
+      title: t('booking_steps.items.1.title'),
+      description: t('booking_steps.items.1.description'),
+    },
+    {
+      number: '2',
+      title: t('booking_steps.items.2.title'),
+      description: t('booking_steps.items.2.description'),
+    },
+    {
+      number: '3',
+      title: t('booking_steps.items.3.title'),
+      description: t('booking_steps.items.3.description'),
+    },
+  ]
+
   return (
     <section id="proceso" className="booking-steps-section" aria-labelledby="steps-title">
       <div className="section-header">
-        <p className="section-kicker">Transparencia total</p>
-        <h2 id="steps-title">Como funciona la reserva</h2>
+        <p className="section-kicker">{t('booking_steps.kicker')}</p>
+        <h2 id="steps-title">{t('booking_steps.title')}</h2>
       </div>
 
       <div className="steps-container">

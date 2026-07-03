@@ -1,12 +1,15 @@
+import { useTranslation } from 'react-i18next'
 import { siteConfig } from '../../config'
 import './HostProfile.css'
 
 export function HostProfile() {
+  const { t } = useTranslation()
+
   return (
     <section id="anfitrion" className="host-profile-section" aria-labelledby="host-title">
       <div className="section-header">
-        <p className="section-kicker">Tu anfitrion</p>
-        <h2 id="host-title">Atencion directa, sin intermediarios</h2>
+        <p className="section-kicker">{t('host.kicker')}</p>
+        <h2 id="host-title">{t('host.title')}</h2>
       </div>
 
       <div className="host-card">
@@ -18,9 +21,9 @@ export function HostProfile() {
           />
         </div>
         <div className="host-info">
-          <span className="host-verified-label">Identidad verificada</span>
+          <span className="host-verified-label">{t('host.verified')}</span>
           <h2 className="host-name">{siteConfig.host.name}</h2>
-          <p className="host-meta">{siteConfig.host.experience}</p>
+          <p className="host-meta">{t('host.experience')}</p>
         </div>
       </div>
 
@@ -28,27 +31,27 @@ export function HostProfile() {
         <div className="host-detail-item">
           <span className="detail-icon">5.0</span>
           <div className="detail-text">
-            <strong>{siteConfig.host.reviews}</strong>
+            <strong>{t('host.reviews')}</strong>
           </div>
         </div>
         <div className="host-detail-item">
           <span className="detail-icon">ID</span>
           <div className="detail-text">
-            <strong>Identidad verificada</strong>
+            <strong>{t('host.verified')}</strong>
           </div>
         </div>
         <div className="host-detail-item">
           <span className="detail-icon">1h</span>
           <div className="detail-text">
-            <strong>Respuesta rapida</strong>
-            <span>{siteConfig.host.responseTime}</span>
+            <strong>{t('host.response_time_title')}</strong>
+            <span>{t('host.response_time')}</span>
           </div>
         </div>
       </div>
 
       <div className="host-description">
-        <p>{siteConfig.host.description}</p>
-        <button className="contact-host-btn">Contactar con {siteConfig.host.name}</button>
+        <p>{t('host.description')}</p>
+        <button className="contact-host-btn">{t('host.contact')}</button>
       </div>
     </section>
   )

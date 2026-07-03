@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sanctuary Suite | Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c9c6c0",
+                    "inverse-surface": "#303030",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-low": "#f6f3f2",
+                    "outline-variant": "#c1c7cb",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#171d18",
+                    "tertiary-fixed-dim": "#c1c8c0",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001f29",
+                    "surface-container-high": "#eae7e7",
+                    "on-secondary-fixed": "#1c1c18",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#284b59",
+                    "inverse-on-surface": "#f3f0f0",
+                    "tertiary-fixed": "#dde4db",
+                    "on-surface": "#1b1c1c",
+                    "secondary-fixed": "#e5e2db",
+                    "secondary": "#5f5e59",
+                    "outline": "#72787c",
+                    "on-primary-container": "#caeeff",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#c3e8fa",
+                    "primary-fixed-dim": "#a8ccdd",
+                    "on-secondary-fixed-variant": "#474742",
+                    "surface-variant": "#e4e2e1",
+                    "error-container": "#ffdad6",
+                    "primary": "#315563",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#a8ccdd",
+                    "tertiary": "#4b524b",
+                    "on-background": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#fcf9f8",
+                    "surface-tint": "#406372",
+                    "surface-container": "#f0eded",
+                    "secondary-container": "#e5e2db",
+                    "tertiary-container": "#636a63",
+                    "primary-container": "#4a6d7c",
+                    "on-secondary-container": "#65645f",
+                    "on-tertiary-fixed-variant": "#424942",
+                    "on-surface-variant": "#41484b",
+                    "on-tertiary-container": "#e3eae1",
+                    "background": "#fcf9f8",
+                    "surface": "#fcf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["\"Source Serif 4\""],
+                    "display-lg": ["\"Source Serif 4\""],
+                    "label-sm": ["DM Sans"],
+                    "display-lg-mobile": ["\"Source Serif 4\""],
+                    "body-md": ["DM Sans"],
+                    "label-md": ["DM Sans"],
+                    "body-lg": ["DM Sans"],
+                    "headline-sm": ["\"Source Serif 4\""]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.04em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        .date-cell {
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .date-unavailable {
+            color: #d1d5db;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .date-selected {
+            background-color: #315563 !important;
+            color: #ffffff !important;
+            border-radius: 9999px;
+        }
+        .date-range {
+            background-color: #c3e8fa;
+            color: #001f29;
+        }
+        .shadow-soft {
+            box-shadow: 0px 4px 20px rgba(74, 109, 124, 0.08);
+        }
+        .shadow-high {
+            box-shadow: 0px 12px 40px rgba(45, 45, 45, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface shadow-sm px-margin-desktop py-4 flex justify-between items-center max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Sanctuary</span>
+<div class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Discover</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary" href="#">Destinations</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Stays</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a serene woman with a peaceful expression, natural lighting, soft focus background of a luxury coastal villa. Minimalist aesthetic with high-key lighting and warm skin tones, fitting a luxury travel brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYfqRdAqqgTNgZPcMzbFqO-2F7ZpLfv17vaRYDclny_ZuKWfWIwj8-O9GknDfjhnndukebfkpDhSzCvyTM9Mg7_GzjN1f9FUbbMdSXSdcQ7BCAA0hxgPSQxT_Pf0-RgGPZ8SSCcqTzzg_SYmHG6Pz2bau0s6q22_fkCWI_jx-nvsA3xqMod9L6x9VUT4CX2TAETSSH7rwrPo9NWq6eNR-byDY8F6b_hR1nWoJvRMY_qmEIO4ZQK-8"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-container-max mx-auto px-margin-desktop py-12 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Content Area -->
+<div class="lg:col-span-8">
+<!-- Header & Gallery Section -->
+<header class="mb-10">
+<div class="flex justify-between items-end mb-6">
+<div>
+<nav class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant mb-2">
+<span>Destinations</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Portugal</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface">Algarve</span>
+</nav>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-1">Sanctuary Suite</h1>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-label-md font-label-md">Praia da Rocha, Algarve, Portugal</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline rounded-lg text-label-md font-label-md hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">share</span> Share
+                            </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline rounded-lg text-label-md font-label-md hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">favorite</span> Save
+                            </button>
+</div>
+</div>
+<!-- Bento Gallery -->
+<div class="grid grid-cols-4 grid-rows-2 gap-4 h-[400px] rounded-xl overflow-hidden shadow-soft">
+<div class="col-span-2 row-span-2 relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A spacious, high-ceilinged modern living room with floor-to-ceiling windows overlooking a turquoise ocean. Minimalist furniture in oatmeal and soft charcoal tones, natural wood floors, and a soft morning light filtering through sheer curtains. The atmosphere is quiet, serene, and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa-YVPlmLVHHxNGr3Ce-Q8He1pYbjakcq7eKoUA7tSqR7i0xK8ej0Ztrgtlw_b1wb5BVp847SxN1EdfsA9XVX2U68MrN2ibshmdFWczCQQztg0hO0IP31mmc3sKJmwPzgs94FDAurOHbm8FQBp93INU66bU78H3bmJMvvlcDike5tm-ZEdjyTuQiZC2VD_vST9Yb1GRnEoJQLx59DMdYA1Acv5SqngzFN3oilTVnXHWBiCUfBazv0"/>
+</div>
+<div class="col-span-2 row-span-1 relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist master bedroom featuring a low-profile bed with crisp white linens and a Mediterranean blue throw. Large glass doors open to a private terrace with a glimpse of a sage green olive tree. Soft, warm sunset light creates a tranquil and cozy retreat atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJrSGvWw1_Kew9Jr9Oc1uJK5-WF-pGo5hoj2SVTuPnbSwxp7ueLmqeOF0yWs2d4yKIPVosrHJ2rj5o_ei7QXBAwzMLjRiVd4zge5nG8e1pJiOiE-cGWtLuY2T6m2JXf1eWIHoYKImFtXMB5WsQn4TervlXZbULHa6eb3kt6AL_MyDbuNAv2ny2JPVgdH2cyIbxFEsFWjRrFza0QbLFghEjROL5I1pBwbRnPJcL9dEHX4N_T0KWXLM"/>
+</div>
+<div class="col-span-1 row-span-1 relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A luxurious bathroom with a deep soaking tub, natural stone walls in light gray, and brass fixtures. A small window allows soft daylight to illuminate the space, emphasizing a tactile, spa-like sanctuary. Soft shadows and minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgcPjeBvwilKAchEgVI_IUZ6zH_NkYwS9lHqqroKY6UUqQQhCwJCshF-xQLsmCxk26FtyULK4XuTndaLC1BmJ2Xtc5OXQhoCkyaIGfeJEGgJH0ZknLhulKE7KEflqT7JexR0BpB1_ac4EVoIIh7imuwfk0ePALz2ZIqnW6Pkqw3dNVcOwc_05icoku1I3Bft2JmZkT1vgHqhoKcwTcqoaoLUMgaA4-raFmh5RlJxF8bSsW0XqDKUw"/>
+</div>
+<div class="col-span-1 row-span-1 relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An outdoor private infinity pool at dusk, reflecting the deep blue sky. Minimalist lounge chairs and a clean stone deck surround the pool, with views of the distant coast. The lighting is low and atmospheric, creating a sense of exclusive calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJgIEMl5Bpmw3DakpMmHyDXy2yM7hmW-XOQrVEtpEMy2zdeKFlPESg1nywNyLdLz6QCDQtff9_twX2Nx28wLItht_hPre7a2VuUNMtPJA-HmYCq49yq-dPvBfEuPv_NT4Xv27ogXiitfm--cc7HW9Tj_YgRv2y5ARITK9hJewWr_h76ZFZ71CDq2z_yefxq6pLaRID1aP0SR9txh4SdTGqQWRMYBtchyXCxIzomMpEZNo-t6RVVTQ"/>
+</div>
+</div>
+</header>
+<!-- Description Snippet -->
+<section class="mb-12 border-b border-outline-variant pb-12">
+<div class="flex items-center gap-6 mb-6">
+<div class="flex items-center gap-2 px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Verified Stay</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-xs">star</span>
+<span>4.98 (124 reviews)</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        A curated escape designed for those who seek silence and sophistication. The Sanctuary Suite combines local Portuguese craftsmanship with high-end modern amenities, offering an unparalleled views of the Atlantic.
+                    </p>
+</section>
+<!-- Calendar Section -->
+<section class="mb-12">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-6">Select your dates</h2>
+<div class="bg-surface border border-outline-variant rounded-xl p-8 shadow-soft">
+<div class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">September 2024</span>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-outline rounded-full hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline rounded-full hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="calendar-grid mb-2">
+<div class="text-center text-label-sm font-label-sm text-outline py-2">MON</div>
+<div class="text-center text-label-sm font-label-sm text-outline py-2">TUE</div>
+<div class="text-center text-label-sm font-label-sm text-outline py-2">WED</div>
+<div class="text-center text-label-sm font-label-sm text-outline py-2">THU</div>
+<div class="text-center text-label-sm font-label-sm text-outline py-2">FRI</div>
+<div class="text-center text-label-sm font-label-sm text-outline py-2">SAT</div>
+<div class="text-center text-label-sm font-label-sm text-outline py-2">SUN</div>
+</div>
+<div class="calendar-grid gap-y-1">
+<!-- Placeholder dates for visualization -->
+<div class="date-cell date-unavailable text-label-md font-label-md">26</div>
+<div class="date-cell date-unavailable text-label-md font-label-md">27</div>
+<div class="date-cell date-unavailable text-label-md font-label-md">28</div>
+<div class="date-cell date-unavailable text-label-md font-label-md">29</div>
+<div class="date-cell date-unavailable text-label-md font-label-md">30</div>
+<div class="date-cell date-unavailable text-label-md font-label-md">31</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">1</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">2</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">3</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">4</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">5</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">6</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">7</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">8</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">9</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">10</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">11</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">12</div>
+<div class="date-cell date-selected text-label-md font-label-md">13</div>
+<div class="date-cell date-range text-label-md font-label-md">14</div>
+<div class="date-cell date-range text-label-md font-label-md">15</div>
+<div class="date-cell date-range text-label-md font-label-md">16</div>
+<div class="date-cell date-range text-label-md font-label-md">17</div>
+<div class="date-cell date-selected text-label-md font-label-md">18</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">19</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">20</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">21</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">22</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">23</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">24</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">25</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">26</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">27</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">28</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">29</div>
+<div class="date-cell text-label-md font-label-md hover:bg-surface-container rounded-full">30</div>
+<div class="date-cell date-unavailable text-label-md font-label-md">1</div>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full border border-outline-variant bg-surface"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Available</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Selected</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-surface-dim"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Unavailable</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Side Panel: Booking Summary -->
+<aside class="lg:col-span-4">
+<div class="sticky top-28 bg-surface border border-outline-variant rounded-xl p-6 shadow-high">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">Resumen de Reserva</h3>
+<!-- Guest Input -->
+<div class="mb-6">
+<label class="block text-label-md font-label-md text-on-surface mb-2">Number of Guests</label>
+<div class="relative">
+<select class="w-full h-12 px-4 bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-0 appearance-none text-body-md">
+<option>2 Guests (Standard)</option>
+<option>1 Guest</option>
+<option>3 Guests</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-3 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Date Summary Display -->
+<div class="flex gap-2 mb-8">
+<div class="flex-1 p-3 bg-surface-container rounded-lg">
+<span class="block text-[10px] font-bold text-outline-variant uppercase tracking-wider mb-1">Check-in</span>
+<span class="text-label-md font-bold text-on-surface">Sep 13, 2024</span>
+</div>
+<div class="flex-1 p-3 bg-surface-container rounded-lg">
+<span class="block text-[10px] font-bold text-outline-variant uppercase tracking-wider mb-1">Check-out</span>
+<span class="text-label-md font-bold text-on-surface">Sep 18, 2024</span>
+</div>
+</div>
+<!-- Price Calculation Area -->
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Precio por noche</span>
+<span class="font-medium text-on-surface">$245.00</span>
+</div>
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Número de noches</span>
+<span class="font-medium text-on-surface">5 noches</span>
+</div>
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Service fee</span>
+<span class="font-medium text-on-surface">$32.00</span>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">Total estimado</span>
+<span class="font-headline-sm text-headline-sm text-primary">$1,257.00</span>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold text-body-md hover:bg-primary-container hover:text-on-primary-container transition-all shadow-soft active:scale-95 duration-200 flex justify-center items-center gap-2">
+                        Reservar Ahora
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-label-sm font-label-sm text-on-surface-variant mt-4">
+                        No se realizará ningún cargo todavía.
+                    </p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container border-t border-outline-variant px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-headline-sm text-headline-sm text-primary">Sanctuary</span>
+<p class="font-label-md text-label-md text-on-surface-variant">© 2024 Sanctuary Stays. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4">
+<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Help Center</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Careers</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for date selection simulation
+        document.querySelectorAll('.date-cell:not(.date-unavailable)').forEach(cell => {
+            cell.addEventListener('click', () => {
+                // This is a visual only simulation for the "High Fidelity" prompt
+                console.log('Date clicked:', cell.innerText);
+                // Active state logic would go here in a full app
+            });
+        });
+    </script>
+</body></html>

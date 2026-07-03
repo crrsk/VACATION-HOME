@@ -8,6 +8,7 @@ import { HostProfile } from '../components/Trust/HostProfile'
 import { BookingSteps } from '../components/Trust/BookingSteps'
 import { SafetyLegal } from '../components/Trust/SafetyLegal'
 import { CtaSection } from '../components/Booking/CtaSection'
+import { LocationSection } from '../components/Location/LocationSection'
 
 export function HomePage() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export function HomePage() {
         <HighlightsSection />
         <ReviewSection />
         <HostProfile />
+        <LocationSection />
         <BookingSteps />
         <SafetyLegal />
       </div>

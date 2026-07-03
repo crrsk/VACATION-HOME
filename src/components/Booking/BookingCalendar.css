@@ -1,0 +1,117 @@
+.booking-calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--color-surface);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(74, 109, 124, 0.08); /* Ambient shadow */
+  border: 1px solid var(--color-outline);
+  width: 100%;
+}
+
+.calendar-hint {
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  font-weight: 500;
+  background: var(--color-surface-container-low);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  display: inline-block;
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.custom-calendar {
+  margin: 0 auto;
+  font-family: var(--font-body);
+  --rdp-day-width: 40px;
+  --rdp-day-height: 40px;
+  --rdp-day_button-width: 38px;
+  --rdp-day_button-height: 38px;
+}
+
+.custom-calendar .rdp-months {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.custom-calendar,
+.rdp-root {
+  --rdp-selected-border: none;
+}
+
+.rdp-day_button,
+.rdp-day {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Base button styles */
+.custom-day {
+  transition: all 0.2s ease;
+  font-weight: 500;
+  border-radius: 8px !important;
+  border: 2px solid transparent !important;
+  outline: none !important;
+  background-color: transparent !important;
+  color: var(--color-text-main);
+}
+
+.custom-day:hover:not([disabled]) {
+  background-color: var(--color-surface-container) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-surface-container) !important;
+}
+
+/* Selected dates */
+.rdp-selected .custom-day {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: white !important;
+  font-weight: 700;
+}
+
+/* Range Start and End */
+.rdp-range_start .custom-day,
+.rdp-range_end .custom-day {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: white !important;
+  font-weight: 700;
+}
+
+/* Middle of the range */
+.rdp-range_middle .custom-day {
+  background-color: var(--color-primary-light) !important;
+  border-color: var(--color-primary-light) !important;
+  color: #001f29 !important;
+  border-radius: 0 !important;
+  font-weight: 500;
+}
+
+/* Remove table cell backgrounds just in case */
+.rdp-day {
+  background: transparent !important;
+}
+
+/* Connect the start/end visually if supported */
+.custom-range-start {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.custom-range-end {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* Today's date */
+.rdp-today {
+  color: var(--color-primary);
+  font-weight: 800;
+}

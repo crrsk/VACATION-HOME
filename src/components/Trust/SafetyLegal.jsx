@@ -1,59 +1,61 @@
+import { useTranslation } from 'react-i18next'
 import './SafetyLegal.css'
 
-const faqs = [
-  {
-    question: 'Como se realiza el pago de forma segura?',
-    answer: 'Trabajamos con transferencia bancaria verificada o pasarela con confirmacion. Nunca solicitamos pagos por canales no trazables.',
-  },
-  {
-    question: 'Que documentacion recibo antes de pagar?',
-    answer: 'Recibiras datos completos de la reserva, condiciones, politica de cancelacion y contrato de alquiler temporal.',
-  },
-  {
-    question: 'Como puedo evitar intentos de fraude?',
-    answer: 'Confirma siempre que hablas por nuestros canales oficiales y revisa que la cuenta de cobro coincida con la indicada en el contrato.',
-  },
-]
-
 export function SafetyLegal() {
+  const { t } = useTranslation()
+
+  const faqs = [
+    {
+      question: t('safety_legal.faqs.1.question'),
+      answer: t('safety_legal.faqs.1.answer'),
+    },
+    {
+      question: t('safety_legal.faqs.2.question'),
+      answer: t('safety_legal.faqs.2.answer'),
+    },
+    {
+      question: t('safety_legal.faqs.3.question'),
+      answer: t('safety_legal.faqs.3.answer'),
+    },
+  ]
+
   return (
     <section id="seguridad" className="safety-legal-section" aria-labelledby="safety-title">
       <div className="section-header">
-        <p className="section-kicker">Tu tranquilidad es lo primero</p>
-        <h2 id="safety-title">Seguridad y normas</h2>
+        <p className="section-kicker">{t('safety_legal.kicker')}</p>
+        <h2 id="safety-title">{t('safety_legal.title')}</h2>
       </div>
       <div className="safety-grid">
         <div className="safety-block">
-          <h3>Normas de la casa</h3>
+          <h3>{t('safety_legal.house_rules')}</h3>
           <ul className="safety-list">
-            <li>Llegada: 15:00 - 20:00</li>
-            <li>Salida: 11:00</li>
-            <li>Maximo 6 huespedes</li>
-            <li>No se permiten fiestas ni eventos</li>
+            <li>{t('safety_legal.rules.arrival')}</li>
+            <li>{t('safety_legal.rules.departure')}</li>
+            <li>{t('safety_legal.rules.max_guests')}</li>
+            <li>{t('safety_legal.rules.no_parties')}</li>
           </ul>
         </div>
 
         <div className="safety-block">
-          <h3>Seguridad y entorno</h3>
+          <h3>{t('safety_legal.security')}</h3>
           <ul className="safety-list">
-            <li>Detector de humo instalado</li>
-            <li>Botiquin de primeros auxilios</li>
-            <li>Cerca de servicios medicos</li>
-            <li>Entorno residencial vigilado</li>
+            <li>{t('safety_legal.security_items.smoke_detector')}</li>
+            <li>{t('safety_legal.security_items.first_aid')}</li>
+            <li>{t('safety_legal.security_items.medical')}</li>
+            <li>{t('safety_legal.security_items.neighborhood')}</li>
           </ul>
         </div>
 
         <div className="safety-block">
-          <h3>Cancelacion</h3>
+          <h3>{t('safety_legal.cancellation')}</h3>
           <p className="cancel-text">
-            Cancelacion gratuita hasta 14 dias antes de la llegada.
-            Consulta los detalles en el contrato de reserva.
+            {t('safety_legal.cancellation_text')}
           </p>
         </div>
       </div>
 
       <div className="faq-container">
-        <h3>Preguntas frecuentes</h3>
+        <h3>{t('safety_legal.faq')}</h3>
         <div className="faq-grid">
           {faqs.map((item) => (
             <div className="faq-item" key={item.question}>

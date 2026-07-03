@@ -1,0 +1,64 @@
+.stripe-form {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  margin-top: 1.5rem;
+}
+
+.form-row {
+  margin-bottom: 1.5rem;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  font-size: 0.95rem;
+}
+
+.card-element-container {
+  padding: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background: white;
+}
+
+.card-error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  background: #fdf2f2;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.pay-button {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.pay-button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.pay-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payment-note {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}

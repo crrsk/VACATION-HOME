@@ -17,8 +17,7 @@ export function HeroSection() {
         </p>
 
         <div className="hero-actions">
-          <ReserveButton label={t('hero.reserve')} href="/#reserva" />
-          <a className="button-secondary" href="/#destinos">{t('hero.view_gallery')}</a>
+          <ReserveButton label={t('hero.reserve')} to="/checkout" />
         </div>
       </div>
 

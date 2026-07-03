@@ -29,5 +29,136 @@
     "response_time": "Usually responds within an hour",
     "description": "Enrique personally manages this villa in Cartagena and maintains direct contact with every guest. Before confirming, he shares all stay information, rules, and conditions so you can book with total clarity.",
     "contact": "Contact Enrique"
+  },
+  "trust_highlights": {
+    "direct_booking": "Direct booking",
+    "direct_booking_sub": "No intermediary commissions",
+    "verified_host": "Verified host",
+    "verified_host_sub": "Personal treatment before and during your stay",
+    "traceable_payment": "Traceable payment",
+    "traceable_payment_sub": "Reviewable conditions before confirming"
+  },
+  "gallery": {
+    "kicker": "Private gallery",
+    "title": "Pool, calm and Mediterranean light",
+    "description": "Tour the key spaces of the villa before requesting dates: exterior with views, resting areas, and rooms designed to disconnect as a group.",
+    "caption_1": "Private exterior",
+    "caption_2": "Open views",
+    "caption_3": "Capacity for 6 guests",
+    "prev": "Previous image",
+    "next": "Next image",
+    "view_image": "View image",
+    "photo_alt": "Accommodation photo"
+  },
+  "highlights": {
+    "kicker": "The experience",
+    "title": "A private stay with a boutique hotel feel",
+    "items": {
+      "privacy": {
+        "eyebrow": "Privacy",
+        "title": "Entire villa just for your group",
+        "description": "No shared areas: pool, exterior, and rooms are reserved exclusively for your companions."
+      },
+      "exterior": {
+        "eyebrow": "Exterior",
+        "title": "Pool with open views",
+        "description": "A main space for slow breakfasts, sunny afternoons, and quiet nights outdoors."
+      },
+      "comfort": {
+        "eyebrow": "Comfort",
+        "title": "Comfortable layout for 6",
+        "description": "3 bedrooms, 3 beds, and 2 bathrooms so every room works spaciously."
+      }
+    }
+  },
+  "reviews": {
+    "kicker": "Real experiences",
+    "title": "What guests remember",
+    "verified_count": "24 verified reviews",
+    "show_more": "Show all 24 reviews",
+    "items": {
+      "1": {
+        "author": "Marta and family",
+        "text": "Spotless house, spectacular outdoor area, and very transparent management from the first message.",
+        "rating": "Excellent",
+        "date": "June 2025"
+      },
+      "2": {
+        "author": "Carlos, group trip",
+        "text": "Clear booking process, well-explained contract, and check-in without surprises. Very professional.",
+        "rating": "Excellent",
+        "date": "August 2025"
+      },
+      "3": {
+        "author": "Ana and Diego",
+        "text": "It gave us a lot of confidence to receive all the information in advance and direct contact at all times.",
+        "rating": "Excellent",
+        "date": "September 2025"
+      }
+    }
+  },
+  "booking_steps": {
+    "kicker": "Total transparency",
+    "title": "How booking works",
+    "items": {
+      "1": {
+        "title": "Date request",
+        "description": "Send us your dates and number of guests. We reply with availability confirmation in less than 24 hours."
+      },
+      "2": {
+        "title": "Validation and contract",
+        "description": "You receive a summary of the stay, cancellation policy, and temporary rental contract to review before payment."
+      },
+      "3": {
+        "title": "Protected payment and access",
+        "description": "Payment is made through a secure gateway with an automatic receipt. After payment, we confirm check-in and arrival details."
+      }
+    }
+  },
+  "safety_legal": {
+    "kicker": "Your peace of mind comes first",
+    "title": "Safety and rules",
+    "house_rules": "House rules",
+    "rules": {
+      "arrival": "Arrival: 15:00 - 20:00",
+      "departure": "Departure: 11:00",
+      "max_guests": "Maximum 6 guests",
+      "no_parties": "No parties or events allowed"
+    },
+    "security": "Safety and surroundings",
+    "security_items": {
+      "smoke_detector": "Smoke detector installed",
+      "first_aid": "First aid kit",
+      "medical": "Close to medical services",
+      "neighborhood": "Guarded residential area"
+    },
+    "cancellation": "Cancellation",
+    "cancellation_text": "Free cancellation up to 14 days before arrival. Check the details in the booking contract.",
+    "faq": "Frequently asked questions",
+    "faqs": {
+      "1": {
+        "question": "How is the payment made securely?",
+        "answer": "We work with verified bank transfers or a gateway with confirmation. We never request payments through untraceable channels."
+      },
+      "2": {
+        "question": "What documentation do I receive before paying?",
+        "answer": "You will receive complete details of the booking, conditions, cancellation policy, and temporary rental contract."
+      },
+      "3": {
+        "question": "How can I avoid fraud attempts?",
+        "answer": "Always confirm you are speaking through our official channels and check that the billing account matches the one in the contract."
+      }
+    }
+  },
+  "cta": {
+    "kicker": "Direct booking",
+    "title": "Your private stay in Cartagena begins with a clear consultation.",
+    "description": "We will send you availability, conditions, and contract before payment. No intermediary commissions and with direct contact throughout the process.",
+    "button": "Write to book"
+  },
+  "footer": {
+    "rights": "Villa in Cartagena. Direct booking.",
+    "links": "Useful links",
+    "location": "Location in Cartagena"
   }
 }

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import './GallerySection.css'
 import { useState } from 'react'
 
@@ -10,6 +11,7 @@ const galleryImages = [
 ]
 
 export function GallerySection() {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true)
   const loopedImages = [...galleryImages, galleryImages[0]]
@@ -51,11 +53,10 @@ export function GallerySection() {
   return (
     <section id="destinos" className="gallery-section" aria-labelledby="gallery-title">
       <div className="section-header">
-        <p className="section-kicker">Galeria privada</p>
-        <h2 id="gallery-title">Piscina, calma y luz mediterranea</h2>
+        <p className="section-kicker">{t('gallery.kicker')}</p>
+        <h2 id="gallery-title">{t('gallery.title')}</h2>
         <p>
-          Recorre los espacios clave de la villa antes de solicitar fechas: exterior con vistas,
-          zonas de descanso y estancias pensadas para desconectar en grupo.
+          {t('gallery.description')}
         </p>
       </div>
 
@@ -64,7 +65,7 @@ export function GallerySection() {
           className="carousel-control carousel-control-left"
           type="button"
           onClick={prevSlide}
-          aria-label="Imagen anterior"
+          aria-label={t('gallery.prev')}
         >
           <span className="carousel-control-icon" aria-hidden="true">&#8249;</span>
         </button>
@@ -82,7 +83,7 @@ export function GallerySection() {
               key={`${image}-${index}`}
               className="carousel-main-image"
               src={image}
-              alt={`Foto del alojamiento ${index + 1}`}
+              alt={`${t('gallery.photo_alt')} ${index + 1}`}
               loading="lazy"
             />
           ))}
@@ -92,26 +93,26 @@ export function GallerySection() {
           className="carousel-control carousel-control-right"
           type="button"
           onClick={nextSlide}
-          aria-label="Imagen siguiente"
+          aria-label={t('gallery.next')}
         >
           <span className="carousel-control-icon" aria-hidden="true">&#8250;</span>
         </button>
       </div>
 
       <div className="gallery-caption">
-        <span>Exterior privado</span>
-        <span>Vistas abiertas</span>
-        <span>Capacidad 6 huespedes</span>
+        <span>{t('gallery.caption_1')}</span>
+        <span>{t('gallery.caption_2')}</span>
+        <span>{t('gallery.caption_3')}</span>
       </div>
 
-      <div className="gallery-thumbnails" aria-label="Seleccion de imagen">
+      <div className="gallery-thumbnails" aria-label={t('gallery.view_image')}>
         {galleryImages.map((image, index) => (
           <button
             key={image}
             className={`thumbnail-button ${currentRealIndex === index ? 'is-active' : ''}`}
             type="button"
             onClick={() => setActiveIndex(index)}
-            aria-label={`Ver imagen ${index + 1}`}
+            aria-label={`${t('gallery.view_image')} ${index + 1}`}
           >
             <img src={image} alt="" loading="lazy" />
           </button>

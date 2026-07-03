@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { siteConfig } from '../../config'
@@ -20,12 +19,12 @@ export function LandingHeader() {
 
   return (
     <header className="landing-header">
-      <Link className="brand" to="/" aria-label={`${siteConfig.propertyName} inicio`} onClick={closeMenu}>
+      <a className="brand" href="/#inicio" aria-label={`${siteConfig.propertyName} inicio`} onClick={closeMenu}>
         <span className="brand-copy">
           <span className="brand-name">{siteConfig.propertyName}</span>
           <span className="brand-place">{siteConfig.location}</span>
         </span>
-      </Link>
+      </a>
 
       <nav className="desktop-menu" aria-label="Navegacion principal">
         {navLinks.map((link) => (

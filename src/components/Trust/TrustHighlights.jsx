@@ -1,24 +1,27 @@
+import { useTranslation } from 'react-i18next'
 import './TrustHighlights.css'
 
-const trustItems = [
-  {
-    icon: '0%',
-    title: 'Reserva directa',
-    subtitle: 'Sin comisiones de intermediacion',
-  },
-  {
-    icon: 'ID',
-    title: 'Anfitrion verificado',
-    subtitle: 'Trato personal antes y durante la estancia',
-  },
-  {
-    icon: 'SSL',
-    title: 'Pago trazable',
-    subtitle: 'Condiciones revisables antes de confirmar',
-  },
-]
-
 export function TrustHighlights() {
+  const { t } = useTranslation()
+
+  const trustItems = [
+    {
+      icon: '0%',
+      title: t('trust_highlights.direct_booking'),
+      subtitle: t('trust_highlights.direct_booking_sub'),
+    },
+    {
+      icon: 'ID',
+      title: t('trust_highlights.verified_host'),
+      subtitle: t('trust_highlights.verified_host_sub'),
+    },
+    {
+      icon: 'SSL',
+      title: t('trust_highlights.traceable_payment'),
+      subtitle: t('trust_highlights.traceable_payment_sub'),
+    },
+  ]
+
   return (
     <section className="trust-highlights-section" aria-label="Garantias de reserva">
       <div className="trust-highlights">
