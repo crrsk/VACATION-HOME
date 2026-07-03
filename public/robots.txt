@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.lospalmitoscartagena.com/sitemap.xml
+Sitemap: https://www.villalospalmitos.com/sitemap.xml
